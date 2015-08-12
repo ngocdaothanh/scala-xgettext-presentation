@@ -13,4 +13,4 @@ addCompilerPlugin("tv.cntt" %% "xgettext" % "1.3")
 scalacOptions += "-P:xgettext:hello.I18n"
 
 // scaposer
-libraryDependencies += "tv.cntt" %% "scaposer" % "1.5"
+libraryDependencies += "tv.cntt" %% "scaposer" % "1.6"

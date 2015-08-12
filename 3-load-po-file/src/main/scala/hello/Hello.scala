@@ -19,11 +19,11 @@ trait I18n {
 }
 
 /**
- * Loads i18n strings from a language files.
+ * Loads i18n strings from a language file.
  */
 object I18n extends I18n {
   private val LANGUAGE_FILE = "fr.po"
-  private val po = scaposer.Parser.parsePo(readFile(LANGUAGE_FILE)).get
+  private val po = scaposer.Parser.parsePo(readFile(LANGUAGE_FILE)).right.get
   
   private def readFile(fileName: String): String = {
     val source = scala.io.Source.fromFile(fileName)
@@ -34,11 +34,11 @@ object I18n extends I18n {
     po.t(singular)
   
   def tn(singular: String, plural: String, n: Long): String =
-    po.t(singular, plural, n)
+    po.tn(singular, plural, n)
 
   def tc(context: String, singular: String): String =
-    po.t(context, singular)
+    po.tc(context, singular)
     
   def tcn(context: String, singular: String, plural: String, n: Long): String =
-    po.t(context, singular, plural, n)
+    po.tcn(context, singular, plural, n)
 }
