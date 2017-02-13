@@ -2,15 +2,15 @@ organization := "tv.cntt"
 name         := "scala-xgettext-presentation"
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.12.1"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
-javacOptions  ++= Seq("-source", "1.7", "-target", "1.7")
+javacOptions  ++= Seq("-source", "1.8", "-target", "1.8")
 
 // scala-xgettext
 autoCompilerPlugins := true
-addCompilerPlugin("tv.cntt" %% "xgettext" % "1.3")
+addCompilerPlugin("tv.cntt" %% "xgettext" % "1.5.1")
 scalacOptions += "-P:xgettext:hello.I18n"
 
 // scaposer
-libraryDependencies += "tv.cntt" %% "scaposer" % "1.6"
+libraryDependencies += "tv.cntt" %% "scaposer" % "1.10"
